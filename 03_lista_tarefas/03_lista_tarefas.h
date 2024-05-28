@@ -1,13 +1,13 @@
 #ifndef LISTA_TAREFAS_H
 #define LISTA_TAREFAS_H
 
-#define MAX_TITLE_LENGTH 100
-#define MAX_DESC_LENGTH 256
+#define TAMANHO_MAXIMO_TITULO 100
+#define TAMANHO_MAXIMO_DESCRICAO 256
 
 // Estrutura de um nó da lista de tarefas
 typedef struct Task {
-    char titulo[MAX_TITLE_LENGTH];
-    char descricao[MAX_DESC_LENGTH];
+    char titulo[TAMANHO_MAXIMO_TITULO];
+    char descricao[TAMANHO_MAXIMO_DESCRICAO];
     int completada;
     struct Task* proximo;
 } Tarefa;
@@ -19,22 +19,22 @@ Tarefa* criaTarefa(const char* titulo, const char* descricao, int completada);
 void adicionaTarefa(Tarefa** tarefa, const char* titulo, const char* descricao, int completada);
 
 // Função para adicionar uma tarefa na posição X
-int adicionaTarefaPosicao(Tarefa** head_ref, const char* titulo, const char* descricao, int completada, int pos);
+int adicionaTarefaPosicao(Tarefa** tarefaRef, const char* titulo, const char* descricao, int completada, int pos);
 
 // Função para alterar uma tarefa na posição X
-int alteraTarefaPosicao(Tarefa* head, int pos, const char* novoTitulo, const char* novaDescricao, int novaCompletada);
+int alteraTarefaPosicao(Tarefa* tarefa, int pos, const char* novoTitulo, const char* novaDescricao, int novaCompletada);
 
 // Função para imprimir todas as tarefas
 void exibirTodasTarefas(Tarefa* tarefa);
 
 // Função para listar uma tarefa específica
-void exibeTarefaPosicao(Tarefa* head, int pos);
+void exibeTarefaPosicao(Tarefa* tarefa, int pos);
 
 // Função para marcar uma tarefa como concluída
 void completarTarefa(Tarefa* tarefa, const char* titulo);
 
 // Função para excluir uma tarefa na posição X
-int excluirTarefaPosicao(Tarefa** head_ref, int pos);
+int excluirTarefaPosicao(Tarefa** tarefaRef, int pos);
 
 // Função para liberar a memória alocada para a lista
 void liberarMemoria(Tarefa* tarefa);
