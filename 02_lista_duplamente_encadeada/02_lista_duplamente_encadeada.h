@@ -20,6 +20,15 @@ void exibeTodosElementosLista(NoListD* no);
 // Função para liberar a memória alocada para a lista
 void liberarMemoriaAlocada(NoListD* no);
 
+// Função para inserir um novo nó em uma posição específica
+int inserirNoPosicao(NoListD** head_ref, int dado, int pos);
+
+// Função para incluir números fornecidos pelo usuário
+void incluirNumerosUsuarioD(NoListD** head_ref);
+
+// Função para incluir 30 números aleatórios na lista
+void incluirNumerosAleatoriosD(NoListD** head_ref);
+
 // Função principal para demonstrar a lista duplamente encadeada
 void exemploListaDuplamenteEncadeada();
 
